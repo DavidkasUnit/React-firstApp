@@ -1,0 +1,40 @@
+%body{
+    position: relative;
+    height: fit-content;
+}
+.main-wrapp{
+    height: 100vh;
+    background-color:aqua;
+    display: grid;
+    grid-template-rows: 100px auto;
+    grid-template-areas:
+    ". . . . . . . ." 
+    ". home   home   home   home   home   home   .";
+}
+.main-fixed{
+    position: fixed;
+    top: 0px;
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    grid-template-rows: 100px auto;
+    grid-template-columns: 280px ;
+    grid-template-areas:
+    "sidebar navbar navbar navbar navbar navbar navbar navbar" 
+    "sidebar . . . . . . contacts";
+}
+.element{
+    border: 1px solid black;
+}
+.main-sidebar{
+    grid-area: sidebar;
+}
+.main-navbar{
+    grid-area: navbar;
+}
+.main-contacts{
+    grid-area: contacts;
+}
+.main-home{
+    grid-area: home;
+}

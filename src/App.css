@@ -1,38 +1,54 @@
-.App {
-  text-align: center;
+.main-wrapp {
+  height: 100vh;
+  background-color: aqua;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 100px auto;
+  grid-template-rows: 100px auto;
+      grid-template-areas: ". . . . . . . ." ". home   home   home   home   home   home   .";
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.main-fixed {
+  position: fixed;
+  top: 0px;
+  height: 100vh;
+  width: 100vw;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 100px auto;
+  grid-template-rows: 100px auto;
+  -ms-grid-columns: 280px;
+  grid-template-columns: 280px;
+      grid-template-areas: "sidebar navbar navbar navbar navbar navbar navbar navbar" "sidebar . . . . . . contacts";
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.element {
+  border: 1px solid black;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.main-sidebar {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 1;
+  grid-area: sidebar;
 }
 
-.App-link {
-  color: #61dafb;
+.main-navbar {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 7;
+  grid-area: navbar;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.main-contacts {
+  -ms-grid-row: 2;
+  -ms-grid-column: 8;
+  grid-area: contacts;
+}
+
+.main-home {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 6;
+  grid-area: home;
 }
